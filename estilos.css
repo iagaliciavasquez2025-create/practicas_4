@@ -1,92 +1,166 @@
-/* Reset básico */
 *{
+
 margin:0;
 padding:0;
+
 box-sizing:border-box;
+
 }
-/* Contenedor principal */
-.contenedor{
-display:grid;
-grid-template-columns: 1fr 3fr 1fr;
-grid-template-rows: auto auto 1fr auto;
-grid-template-areas:
-"header header header"
-"nav nav nav"
-"aside main main"
-"footer footer footer";
-gap:10px;
-min-height:100vh;
-padding:10px;
+
+body{
+
+overflow:hidden;
+
+background:rgb(70, 185, 226);
+
+font-family:Arial;
+
 }
-/* Áreas */
-header{
-grid-area:header;
-background:#333;
-color:white;
-padding:20px;
-text-align:center;
+
+#juego{
+
+width:100vw;
+
+height:100vh;
+
+position:relative;
+
+overflow:hidden;
+
 }
-nav{
-grid-area:nav;
-background:#555;
-}
-nav ul{
+
+/* jugador */
+
+#jugador{
+
+position:absolute;
+
+left:120px;
+
+top:200px;
+
+font-size:40px;
+
+width:60px;
+
+height:60px;
+
 display:flex;
 
-justify-content:space-around;
-list-style:none;
-padding:10px;
-}
-nav li{
-color:white;
-}
-main{
-grid-area:main;
-background:#f4f4f4;
-padding:20px;
-}
-aside{
-grid-area:aside;
-background:#ddd;
-padding:20px;
-}
-footer{
-grid-area:footer;
-background:#333;
-color:white;
-text-align:center;
-padding:10px;
-}
-/* Tarjetas internas (usa Flexbox) */
-.tarjetas{
-display:flex;
-gap:10px;
-margin-top:20px;
-}
-.card{
-background:white;
-padding:20px;
-border:1px solid #ccc;
-flex:1;
-text-align:center;
-}
-/* RESPONSIVO */
-@media (max-width:768px){
-.contenedor{
-grid-template-columns:1fr;
-grid-template-areas:
-"header"
-"nav"
+justify-content:center;
 
-"main"
-"aside"
-"footer";
-}
-nav ul{
-flex-direction:column;
 align-items:center;
+
+z-index:10;
+
 }
-.tarjetas{
-flex-direction:column;
+
+/* tubos */
+
+.tubo{
+
+position:absolute;
+
+width:80px;
+
+background:green;
+
+right:-100px;
+
 }
+
+/* superior */
+
+#tuboSuperior1{
+
+height:200px;
+
+top:0;
+
+}
+
+#tuboSuperior2{
+
+height:300px;
+
+top:0;
+
+}
+
+/* inferior */
+
+#tuboInferior1{
+
+height:250px;
+
+bottom:0;
+
+}
+
+#tuboInferior2{
+
+height:350px;
+
+bottom:0;
+
+}
+
+/* puntaje */
+
+#puntaje{
+
+position:absolute;
+
+top:20px;
+
+left:20px;
+
+background:white;
+
+padding:10px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+z-index:20;
+
+}
+
+@media screen and (max-width: 768px) {
+   
+body{
+
+overflow:hidden;
+
+background:rgb(46, 164, 207);
+
+font-family:Arial;
+
+}
+
+#jugador{
+
+position:absolute;
+
+left:120px;
+
+top:200px;
+
+font-size:55px;
+
+width:60px;
+
+height:60px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:10;
+
+}
+    
 }
